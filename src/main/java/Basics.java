@@ -43,6 +43,7 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
+        System.out.println("Hello World!");
 
 
 
@@ -64,12 +65,12 @@ public class Basics {
          */
 
 
-
         /* Do not remove the line below: if you did task 2 correctly, then
          * you should see the message "my_variable's value is 100" if you run
          * this file!
          */
-        System.out.println("my_variable's value is " + my_variable);
+        int my_variable= 100;
+        System.out.println("my_variable's value is "+ my_variable);
 
         /* 5. In Python, we could write a loop that iterates using:
          *        for <variable> in <values>:
@@ -99,6 +100,10 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
+        for (int i = 10; i >= 0; i--){
+            System.out.println("Current count: "+ i);
+        }
+
 
 
     }
@@ -141,6 +146,13 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
+        String[] arrOfStr = to_split.split(" ");
+        char result;
+
+        for (String a : arrOfStr)
+            ret.append((a.charAt(0)));
+
+
 
         // Fill in the rest of the body here
 
@@ -163,13 +175,26 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
+        if(arr.length==0 || arr.length==1){
+            return 0;
+        }else{
+            for(int i = 0; i<arr.length; i++){
+                if(i%2!=0){
+                    current_sum=arr[i]+current_sum;
+                }
+
+            }
+        }
 
         /* TODO (Task 5): Complete this method body using a for-loop.
          *                You can find the length of an array by using the
          *                .length attribute (e.g. arr.length)
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
+         *
          */
+
+
 
         return current_sum;
     }
